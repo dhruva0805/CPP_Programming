@@ -41,6 +41,16 @@ int main()
         sprintf(buffer, "DN=%d", i);
         ManagedObject temp(buffer);
         mos.push_back(temp);
+        cout << "Capacity: " << mos.capacity() << ", Size: " << mos.size() << endl;
+    }
+
+    try {
+        cout << "About t use the subscript operator: " << endl;
+        cout << mos.at(G_COUNT + 1).m_id << endl;
+
+    }
+    catch (exception& exec){
+        cout << exec.what() << endl;
     }
 
     cout << "The number of objects created with overridden constructor: " << G_CONS << endl;
